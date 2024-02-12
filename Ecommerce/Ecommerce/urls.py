@@ -18,9 +18,11 @@ from django.contrib import admin
 from django.urls import path , include
 from apps.core.views import index,about
 
+from apps.vender.views import login,signup
 urlpatterns = [
     path('', include('apps.store.urls')),
     path('',index,name="index"),
     path('admin/', admin.site.urls),
     path('',include("apps.core.urls" )), # home page
+    path('',include("apps.vender.urls")), # vender page
 ]

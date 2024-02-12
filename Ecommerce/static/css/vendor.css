@@ -394,3 +394,8 @@ img.mfp-img {
   height: auto !important;
   z-index: -100;
 }
+
+/* css by suresh */
+.signbt{
+  text-decoration: none;
+}
