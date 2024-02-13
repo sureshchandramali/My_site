@@ -2,6 +2,9 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
 from django.contrib.auth import authenticate,login as loginUser 
 from apps.store.models import Product
+from apps.vender.forms import productForm
+
+
 
 # Create your views here.
 
@@ -56,7 +59,8 @@ def product(request):
 def addproduct(request):
      if request.user.is_authenticated:
 
-        user = request.user
-        form = Product()
-        return render(request,'addproduct.html',context={'form':form})
+        # user = request.user
+        form =  productForm()
+        product=Product.objects.all
+        return render(request,'addproduct.html',context={'form':form,'product':product})
     # return render (request,'addproduct.html')
